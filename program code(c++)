@@ -25,7 +25,8 @@ void Start() {
 	cout <<"       "<< "5 : 欧皇（0-1000）（生命上限=10）（据说欧皇的胜利方式很不同哦！）\n";
 	cout <<"       "<< "6 : 按任意键退出游戏\n";
 	c = 30;
-
+	cout<<"\n";
+    cout<<"        "<<"请输入您的困难级别:"; 
 	cin >> c;                   // read the user's choice 
 	cout << "\n";
 
@@ -74,9 +75,9 @@ void GetResults() {
 
 	if (i == j) {
 		cout << "The Jackpot is yours!\n\n"; // the user found the secret number
-		while(c='5')
+		while(c=='5')
 		{cout<<"!!!Jackpot!!!"; } 
-		GetResults();
+	
 		Start();
 	}
 	else if (i > j) {
