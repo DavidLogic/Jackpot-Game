@@ -17,22 +17,22 @@ void Start() {
 	life = 0;
 	maxrand = 6;
 
-	cout <<"       "<< "Ñ¡ÔñÒ»¸öÀ§ÄÑ¼¶±ð:\n"; // ÓÃ»§±ØÐëÑ¡ÔñÒ»¸öÀ§ÄÑ¼¶±ð
-	cout <<"       "<< "1 : Ñ§Í½ (0-15)   £¨ÉúÃüÉÏÏÞ=3£©\n";
-	cout <<"       "<< "2 : Õ½Ê¿ (0-30)   £¨ÉúÃüÉÏÏÞ=3£©\n";
-	cout <<"       "<< "3 : ½«¾ü (0-50)   £¨ÉúÃüÉÏÏÞ=5£©\n";
-	cout <<"       "<< "4 : Õ½Éñ£¨0-300£© £¨ÉúÃüÉÏÏÞ=7£©\n";
-	cout <<"       "<< "5 : Å·»Ê£¨0-1000£©£¨ÉúÃüÉÏÏÞ=10£©£¨¾ÝËµÅ·»ÊµÄÊ¤Àû·½Ê½ºÜ²»Í¬Å¶£¡£©\n";
-	cout <<"       "<< "6 : °´ÈÎÒâ¼üÍË³öÓÎÏ·\n";
+	cout <<"       "<< "é€‰æ‹©ä¸€ä¸ªå›°éš¾çº§åˆ«:\n"; 
+	cout <<"       "<< "1 : å­¦å¾’ (0-15)   ï¼ˆç”Ÿå‘½ä¸Šé™=3ï¼‰\n";
+	cout <<"       "<< "2 : æˆ˜å£« (0-30)   ï¼ˆç”Ÿå‘½ä¸Šé™=3ï¼‰\n";
+	cout <<"       "<< "3 : å°†å†› (0-50)   ï¼ˆç”Ÿå‘½ä¸Šé™=5ï¼‰\n";
+	cout <<"       "<< "4 : æˆ˜ç¥žï¼ˆ0-300ï¼‰ ï¼ˆç”Ÿå‘½ä¸Šé™=7ï¼‰\n";
+	cout <<"       "<< "5 : æ¬§çš‡ï¼ˆ0-1000ï¼‰ï¼ˆç”Ÿå‘½ä¸Šé™=10ï¼‰ï¼ˆæ®è¯´æ¬§çš‡çš„èƒœåˆ©æ–¹å¼å¾ˆä¸åŒå“¦ï¼ï¼‰\n";
+	cout <<"       "<< "6 : æŒ‰ä»»æ„é”®é€€å‡ºæ¸¸æˆ\n";
 	c = 30;
 	cout<<"\n";
-    cout<<"        "<<"ÇëÊäÈëÄúµÄÀ§ÄÑ¼¶±ð:"; 
-	cin >> c;                   // read the user's choice 
+    cout<<"        "<<"è¯·è¾“å…¥æ‚¨çš„å›°éš¾çº§åˆ«:"; 
+	cin >> c;                    
 	cout << "\n";
 
 	switch (c) {
 	case '1':
-		maxrand = 15;life = 3;  // the random number will be between 0 and maxrand
+		maxrand = 15;life = 3;
 		break;
 	case '2':
 		maxrand = 30;life = 3;
@@ -50,60 +50,58 @@ void Start() {
 		default:
 			exit(0);
 			break;
-	}
 
-         // number of lifes of the player
-	srand((unsigned)time(NULL)); // init Rand() function
-	j = rand() % maxrand;  // j get a random value between 0 and maxrand
+	srand((unsigned)time(NULL));
+	j = rand() % maxrand;  
 
 	GetResults();
 }
 
 void GetResults() {
 	if (life <= 0) { // if player has no more life then he loses
-		cout << "ÒÅº¶£¬Í·½±¾àÄã½ö²îÒ»²½ !\n\n";
+		cout << "é—æ†¾ï¼Œå¤´å¥–è·ä½ ä»…å·®ä¸€æ­¥ !\n\n";
 		Start();
 	}
 
-	cout << "ÇëÊäÈëÒ»¸öÊý×Ö: \n";
+	cout << "è¯·è¾“å…¥ä¸€ä¸ªæ•°å­—: \n";
 	cin >> i;
 
 	if ((i > maxrand) || (i < 0)) { // if the user number isn't correct, restart
-		cout << "´íÎó: Êý×Ö²»ÔÚ 0 ºÍ " << maxrand<<"Ö®¼ä"<<" "<<endl;
+		cout << "é”™è¯¯: æ•°å­—ä¸åœ¨ 0 å’Œ " << maxrand<<"ä¹‹é—´"<<" "<<endl;
 		GetResults();
 	}
 
 	if (i == j) {
-		cout << "The Jackpot is yours!\n\n"; // the user found the secret number
+		cout << "The Jackpot is yours!\n\n"; 
 		while(c=='5')
 		{cout<<"!!!Jackpot!!!"; } 
 	
 		Start();
 	}
 	else if (i > j) {
-		cout << "Ì«´óÁË\n";
+		cout << "å¤ªå¤§äº†\n";
 		life = life - 1;
-		cout << "ÄúµÄÊ£ÓàÉúÃü: " << life << "\n\n";
+		cout << "æ‚¨çš„å‰©ä½™ç”Ÿå‘½: " << life << "\n\n";
 		GetResults();
 	}
 	else if (i < j) {
-		cout << "Ì«Ð¡ÁË\n";
+		cout << "å¤ªå°äº†\n";
 		life = life - 1;
-		cout << "ÄúµÄÊ£ÓàÉúÃü: " << life << "\n\n";
+		cout << "æ‚¨çš„å‰©ä½™ç”Ÿå‘½: " << life << "\n\n";
 		GetResults();
 	}
 }
 
 int main() {
-	cout <<"                             "<< "** £¡£¡£¡Jackpot£¡£¡£¡ **\n";
-	cout <<"                                                        "<< "×÷Õß£ºDavid Logic"   "¸üÐÂÊ±¼ä:22/12/2019""°æ±¾£ºv1.0""\n";
-	cout <<"                                                        "<<"ÏîÄ¿Ö÷Ò³£ºhttps://github.com/DavidLogic/Jackpot-Game"<<endl; 
-	cout <<"                        "<< "ÓÎÏ·¹æÔò£ºÎÒÃÇµÄÄ¿±êÊÇ²Â²âÒ»¸öÊý×Ö¡£\n";
-	cout <<"                        "<< "Jackpot»á¸æËßÄã";
-	cout << "ÓëÒª²Â²âµÄÊý×ÖÏà¾à´óÐ¡¡£\n\n";
-	cout <<"                        "<< "×¼±¸ºÃÁËÂð£¿\n";
-	cout <<"                        "<< "Í·ÄÔ·ç±©¿ªÊ¼£¡£¡£¡\n";
-	cout <<"                        "<< "Let's win the Jackpot£¡\n";
+	cout <<"                             "<< "** ï¼ï¼ï¼Jackpotï¼ï¼ï¼ **\n";
+	cout <<"                                                        "<< "ä½œè€…ï¼šDavid Logic"   "æ›´æ–°æ—¶é—´:22/12/2019""ç‰ˆæœ¬ï¼šv1.0""\n";
+	cout <<"                                                        "<<"é¡¹ç›®ä¸»é¡µï¼šhttps://github.com/DavidLogic/Jackpot-Game"<<endl; 
+	cout <<"                        "<< "æ¸¸æˆè§„åˆ™ï¼šæˆ‘ä»¬çš„ç›®æ ‡æ˜¯çŒœæµ‹ä¸€ä¸ªæ•°å­—ã€‚\n";
+	cout <<"                        "<< "Jackpotä¼šå‘Šè¯‰ä½ ";
+	cout << "ä¸Žè¦çŒœæµ‹çš„æ•°å­—ç›¸è·å¤§å°ã€‚\n\n";
+	cout <<"                        "<< "å‡†å¤‡å¥½äº†å—ï¼Ÿ\n";
+	cout <<"                        "<< "å¤´è„‘é£Žæš´å¼€å§‹ï¼ï¼ï¼\n";
+	cout <<"                        "<< "Let's win the Jackpotï¼\n";
 		Start();
 	return 0;
 }
