@@ -18,9 +18,15 @@
     <ClCompile Include="Jackpot.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Class.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Class.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -28,5 +34,13 @@
     <ResourceCompile Include="Resource.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Games.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>
