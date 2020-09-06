@@ -1,8 +1,0 @@
-title: Jackpot
-description: "猜数游戏---Jackpot "
-google_analytics: 
-show_downloads: true
-theme: jekyll-theme-merlot
-
-gems:
-  - jekyll-mentions
